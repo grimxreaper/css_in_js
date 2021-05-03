@@ -5,13 +5,13 @@ body {
   background-color: #fffafb;
   text-align: center;
 }
-#page-title {
+/* #page-title {
   font-family: "Work Sans", sans-serif;
   color: #ff87c5;
   font-size: 47px;
-}
+} */
 
-button {
+/* button {
   color: white;
   border: none;
   cursor: pointer;
@@ -28,7 +28,6 @@ button {
   min-width: 7ch;
   min-height: 44px;
   margin: 10px;
-  /* display: inline-flex; */
   align-items: center;
   justify-content: center;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
@@ -36,7 +35,7 @@ button {
   text-align: center;
   line-height: 1.1;
   position: relative;
-}
+} */
 
 button:active {
   transform: scale(0.9);
@@ -47,7 +46,7 @@ button:hover {
 
 }
 
-.topContainer {
+/* .topContainer {
   display: flex;
   flex-flow: row wrap-reverse;
   align-items: center;
@@ -56,19 +55,9 @@ button:hover {
   justify-self: center;
   padding: 0;
   margin: 0;
-}
-/* .container {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  justify-self: center;
-  padding: 0;
-  margin: 0;
 } */
 
-.labelContainer {
+/* .labelContainer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -78,7 +67,7 @@ button:hover {
 }
 .session-label {
   padding: 10px;
-}
+} */
 
 #break-decrement #break-increment {
   display: flex;
@@ -86,14 +75,15 @@ button:hover {
   justify-self: flex-end;
   justify-self: flex-start;
 }
-#break-label {
+
+/* #break-label {
   display: flex;
   flex-direction: row;
 }
 #session-label {
   display: flex;
   align-self: flex-start;
-}
+} */
 #iconBdown {
   position: absolute;
   top: 35%;
@@ -144,12 +134,6 @@ button:hover {
   align-content: center;
 }
 
-h2 {
-  font-size: 22px;
-  text-transform: lowercase;
-  color: #585858;
-  font-family: "Open Sans", sans-serif;
-}
 
 #break-length {
   font-family: "Open Sans", sans-serif;

@@ -1,9 +1,67 @@
 import React from "react";
 import "./App.css";
 import ReactDOM from "react-dom";
-import { getByDisplayValue } from "@testing-library/react";
+// import { getByDisplayValue } from "@testing-library/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSortUp, faSortDown } from "@fortawesome/free-solid-svg-icons";
+
+var styles = {
+  topContainer: {
+    display: "flex",
+    flexFlow: "row wrap-reverse",
+    alignItems: "center",
+    alignContent: "center",
+    justifyContent: "center",
+    justifySelf: "center",
+    padding: "0",
+    margin: "0",
+  },
+  button: {
+    color: "white",
+    border: "none",
+    cursor: "pointer",
+    borderRadius: "7px",
+    background: "rgb(255, 152, 194)",
+    fontFamily: '"Open Sans", sans-serif',
+    padding: "0.25em 0.75em",
+    minWidth: "7ch",
+    minHeight: "44px",
+    margin: "10px",
+    alignItems: "center",
+    justifyContent: "center",
+    boxShadow: "0 3px 5px rgba(0, 0, 0, 0.18)",
+    fontSize: "17px",
+    textAlign: "center",
+    lineHeight: "1.1",
+    position: "relative",
+  },
+  pageTitle: {
+    fontFamily: '"Work Sans", sans-serif',
+    color: "#ff87c5",
+    fontSize: "47px",
+  },
+  h2: {
+    fontSize: "22px",
+    textTransform: "lowercase",
+    color: "#585858",
+    fontFamily: '"Open Sans", sans-serif',
+  },
+  labelContainer: {
+    display: "flex",
+    flexFlow: "row nowrap",
+    justifyContent: "center",
+  },
+  breakLabel: {
+    padding: "10px",
+    display: "flex",
+    flexDirection: "row",
+  },
+  sessionLabel: {
+    padding: "10px",
+    display: "flex",
+    alignSelf: "flex-start",
+  },
+};
 
 class App extends React.Component {
   constructor(props) {
@@ -130,13 +188,15 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <h1 id="page-title">Pomodoro Timer</h1>
+          <h1 style={styles.pageTitle} id="page-title">
+            Pomodoro Timer
+          </h1>
           <div id="timer-label">
-            <h2 id="mainLabel">
+            <h2 style={styles.h2} id="mainLabel">
               {cycle === "break" ? "Break Time" : "Session in progress"}
             </h2>
           </div>
-          <div className="topContainer">
+          <div style={styles.topContainer} className="topContainer">
             <div id="time-left">
               <h4 class="timer">
                 {minutes}:{seconds < 10 ? `0${seconds}` : seconds}{" "}
@@ -144,11 +204,21 @@ class App extends React.Component {
             </div>
           </div>
           <div className="midContainer">
-            <button id="start_stop" class="start" onClick={this.start_stop}>
+            <button
+              style={styles.button}
+              id="start_stop"
+              class="start"
+              onClick={this.start_stop}
+            >
               {" "}
               {this.state.countdown ? "Stop" : "Start"}
             </button>
-            <button class="reset" id="reset" onClick={this.onClick}>
+            <button
+              style={styles.button}
+              class="reset"
+              id="reset"
+              onClick={this.onClick}
+            >
               Reset{" "}
             </button>
             <audio
@@ -160,29 +230,45 @@ class App extends React.Component {
           </div>
 
           <div className="container">
-            <button id="break-decrement" onClick={this.break_decrement}>
+            <button
+              style={styles.button}
+              id="break-decrement"
+              onClick={this.break_decrement}
+            >
               <FontAwesomeIcon icon={faSortDown} id="iconBdown" />
             </button>
-            <button id="break-increment" onClick={this.break_increment}>
+            <button
+              style={styles.button}
+              id="break-increment"
+              onClick={this.break_increment}
+            >
               <FontAwesomeIcon icon={faSortUp} id="iconBup" />
             </button>
 
-            <button id="session-decrement" onClick={this.session_decrement}>
+            <button
+              style={styles.button}
+              id="session-decrement"
+              onClick={this.session_decrement}
+            >
               <FontAwesomeIcon icon={faSortDown} id="iconSdown" />
             </button>
-            <button id="session-increment" onClick={this.session_increment}>
+            <button
+              style={styles.button}
+              id="session-increment"
+              onClick={this.session_increment}
+            >
               <FontAwesomeIcon icon={faSortUp} id="iconSup" />
             </button>
           </div>
-          <div className="labelContainer">
+          <div style={styles.labelContainer} className="labelContainer">
             <div id="break-length" className="break-label">
-              <div id="break-label">
+              <div style={styles.breakLabel} id="break-label">
                 {" "}
                 Break Length: {this.state.break_length} mins
               </div>
             </div>
             <div id="session-length" className="session-label">
-              <div id="session-label">
+              <div style={styles.sessionLabel} id="session-label">
                 Session Length: {this.state.session_length} mins
               </div>
             </div>
